@@ -13,8 +13,7 @@
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier",
-    "prettier/@typescript-eslint"
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -35,18 +34,9 @@
   ],
   "root": true,
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "semi": false
-      }
-    ],
     "no-use-before-define": "off",
     "arrow-body-style": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error"
-    ],
+    "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/no-unused-vars": "error",
     "react/jsx-props-no-spreading": "off",
     "lines-between-class-members": [
@@ -80,6 +70,13 @@
         "tsx": "never"
       }
     ],
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
     "prefer-arrow/prefer-arrow-functions": [
       "error",
       {
@@ -91,18 +88,13 @@
     "react/jsx-filename-extension": [
       "error",
       {
-        "extensions": [
-          ".jsx",
-          "tsx"
-        ]
+        "extensions": [".jsx", "tsx"]
       }
     ]
   },
   "overrides": [
     {
-      "files": [
-        "*.tsx"
-      ],
+      "files": ["*.tsx"],
       "rules": {
         "react/prop-types": "off"
       }
@@ -111,9 +103,7 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": [
-          "src"
-        ]
+        "paths": ["src"]
       }
     }
   }
