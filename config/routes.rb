@@ -7,11 +7,15 @@ Rails.application.routes.draw do
   scope '/auth' do
     get '/sign_up', to: 'main#index'
     get '/log_in', to: 'main#index'
-    get '/log_out', to: 'main#index'
   end
 
   # api
-  namespace :api do
-    resources :users, only: [:create, :show], param: :username
+  namespace :api, { format: 'json' } do
+    scope '/auth' do
+      post '/sign_up', to: 'users#create'
+      post '/log_in', to: 'auth#create'
+      delete '/log_out', to: 'auth#destroy'
+    end
+    resources :users, only: [:show], param: :username
   end
 end
