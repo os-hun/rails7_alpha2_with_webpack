@@ -3,7 +3,8 @@
   "private": "true",
   "scripts": {
     "dev": "foreman start -f Procfile.dev",
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack --mode production --config webpack.config.js",
+    "build:dev": "webpack --mode development --config webpack.config.js",
     "watch": "webpack --watch --config webpack.config.js",
     "lint:js": "eslint --ext .ts,.tsx .",
     "lint:style": "stylelint **/*.{css,scss}",
