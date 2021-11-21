@@ -21,7 +21,7 @@ class Api::UsersController < Api::BaseController
     def set_user
       @user = User.find_by(username: params[:username])
 
-      if !@user
+      if !@user || !is_current_user?(@user)
         render_error :not_found
       end
     end

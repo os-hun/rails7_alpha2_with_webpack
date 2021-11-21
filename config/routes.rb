@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'main#index'
 
   # public
-  scope '', { to: 'main#index' } do
+  scope '/', { to: 'main#index' } do
     scope '/auth' do
       get '/sign_up'
       get '/log_in'
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   # private
-  scope '', { to: 'main#private' } do
+  scope '/', { to: 'main#private' } do
     scope '/users/:username' do
       get '/'
       get '/settings'
