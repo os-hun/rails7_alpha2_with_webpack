@@ -1,4 +1,4 @@
 node_modules
 package-lock.json
-app/assets
+app/assets/stylesheets/application.css
 _templates
