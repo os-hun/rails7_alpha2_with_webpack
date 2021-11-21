@@ -1,5 +1,5 @@
 ---
-to: app/ts/src/containers/<%= directory %>/<%= component_name %>.tsx
+to: app/ts/src/components/<%= directory %>/<%= component_name %>.tsx
 ---
 
 import React from 'react';
