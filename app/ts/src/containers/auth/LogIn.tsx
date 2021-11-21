@@ -13,7 +13,7 @@ export const LogIn = () => {
   } = useForm()
 
   return (
-    <div>
+    <div className="container-xs">
       <h1>Log In</h1>
       <form onSubmit={handleSubmit(logIn)}>
         {getCsrfToken() && (

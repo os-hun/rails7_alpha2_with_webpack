@@ -13,6 +13,7 @@
     "lint:style": "stylelint **/*.{css,scss}",
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js-fix": "eslint --fix --ext .ts,.tsx .",
+    "lint:style-fix": "stylelint --fix **/*.{css,scss}",
     "prepare": "husky install"
   },
   "lint-staged": {
