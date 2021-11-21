@@ -4,7 +4,7 @@ import {
   Routes as ReactRouterRoutes,
   Route,
 } from 'react-router-dom'
-import { App } from './App'
+import { App } from './containers/App'
 import { LogIn } from './containers/auth/LogIn'
 
 const roots = [
