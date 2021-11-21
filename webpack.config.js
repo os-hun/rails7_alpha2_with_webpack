@@ -20,6 +20,14 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      '~': path.resolve(__dirname, 'app/ts/src/'),
+      '@actions': path.resolve(__dirname, 'app/ts/src/actions'),
+      '@api': path.resolve(__dirname, 'app/ts/src/api'),
+      '@comp': path.resolve(__dirname, 'app/ts/src/components'),
+      '@containers': path.resolve(__dirname, 'app/ts/src/containers'),
+      '@utils': path.resolve(__dirname, 'app/ts/src/utils'),
+    },
   },
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({

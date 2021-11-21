@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { getCsrfToken } from '../../utils'
-import { logIn } from '../../actions/auth'
+import { getCsrfToken } from '@utils/index'
+import { logIn } from '@actions/auth'
 
 export const LogIn = () => {
   const { handleSubmit, register } = useForm()

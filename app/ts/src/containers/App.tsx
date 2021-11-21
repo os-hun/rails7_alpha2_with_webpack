@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Api } from '../api'
-import { isAxiosError } from '../utils/client'
+import { Api } from '@api/index'
+import { isAxiosError } from '@utils/client'
 
 export const App = () => {
   const [loading, setLoading] = useState(true)
