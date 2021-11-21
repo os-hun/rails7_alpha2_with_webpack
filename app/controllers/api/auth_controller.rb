@@ -1,6 +1,4 @@
-class Api::AuthController < ApplicationController
-  include Api::AuthHelper
-
+class Api::AuthController < Api::BaseController
   def create
     user = User.find_by(email: params[:auth][:email].downcase)
 
@@ -9,7 +7,7 @@ class Api::AuthController < ApplicationController
       @message = 'Welcome back!!'
       render format: :json, handlers: :jbuilder
     else
-      render_api_error(:bad_request, 'Invalid email/password combination.')
+      render_error :bad_request, 'Invalid email/password combination.'
     end
   end
 

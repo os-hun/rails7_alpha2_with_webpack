@@ -1,6 +1,4 @@
-class Api::UsersController < ApplicationController
-  include Api::AuthHelper
-
+class Api::UsersController < Api::BaseController
   before_action :set_user, only: [:show]
 
   def create
@@ -11,7 +9,7 @@ class Api::UsersController < ApplicationController
       log_in @user
       render 'show', format: :json, handlers: :jbuilder
     else
-      render_api_error(:bad_request, @user.errors.full_messages.join(', '))
+      render_error :bad_request, @user.errors.full_messages.join(', ')
     end
   end
 
@@ -24,7 +22,7 @@ class Api::UsersController < ApplicationController
       @user = User.find_by(username: params[:username])
 
       if !@user
-        render_api_error(:not_found, 'Not Found.')
+        render_error :not_found
       end
     end
 

@@ -3,10 +3,21 @@ Rails.application.routes.draw do
   # Almost every application defines a route for the root path ("/") at the top of this file.
   root 'main#index'
 
-  # view
-  scope '/auth' do
-    get '/sign_up', to: 'main#index'
-    get '/log_in', to: 'main#index'
+  # public
+  scope '', { to: 'main#index' } do
+    scope '/auth' do
+      get '/sign_up'
+      get '/log_in'
+    end
+  end
+
+  # private
+  scope '', { to: 'main#private' } do
+    scope '/users/:username' do
+      get '/'
+      get '/settings'
+      get '/settings/password'
+    end
   end
 
   # api
