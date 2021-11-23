@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { AppContainer } from '@comp/containers/app/Container'
 import { Api } from '@api/index'
 import { isAxiosError } from '@utils/client'
 
@@ -21,10 +22,5 @@ export const App = () => {
     fetch()
   }, [])
 
-  return (
-    <div>
-      {loading && <span>loading...</span>}
-      {!loading && <h1>Hello world!!</h1>}
-    </div>
-  )
+  return <AppContainer loading={loading} />
 }

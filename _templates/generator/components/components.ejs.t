@@ -2,8 +2,10 @@
 to: app/ts/src/components/<%= directory %>/<%= component_name %>.tsx
 ---
 
-import React from 'react';
+import React from 'react'
 
-export const <%= component_name %> = ({ children }) => {
-  return <div>{children}</div>;
+type Props = {}
+
+export const <%= component_name %> = () => {
+  return <div><%= component_name %></div>;
 };
